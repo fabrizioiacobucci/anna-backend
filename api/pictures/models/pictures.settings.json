@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pictures",
+  "info": {
+    "name": "pictures",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "year": {
+      "type": "date",
+      "required": true,
+      "default": "2022-05-20T10:00:00.000Z"
+    },
+    "categories": {
+      "collection": "category",
+      "via": "pictures",
+      "dominant": true
+    },
+    "techniques": {
+      "via": "pictures",
+      "collection": "technique"
+    }
+  }
+}

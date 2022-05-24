@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "projects"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "year": {
+      "type": "date",
+      "default": "2022-05-20T10:00:00.000Z",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "name": "about"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "About me",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "unique": true
+    }
+  }
+}
