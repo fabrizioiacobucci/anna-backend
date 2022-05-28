@@ -5,11 +5,11 @@ module.exports = ({ env }) => ({
       connector: 'bookshelf',
       settings: {
         client: 'mysql',
-        host: 'db-mysql-ams3-59047-do-user-11679947-0.b.db.ondigitalocean.com',
-        port: 25060,
-        database: defaultdb,
-        username: 'doadmin',
-        password: 'AVNS_AWP6ufoQMQvCAGX',
+        host: env('DATABASE_HOST', 'localhost'),
+        port: env.int('DATABASE_PORT', 3306),
+        database: env('DATABASE_NAME', 'strapi'),
+        username: env('DATABASE_USERNAME', 'strapi'),
+        password: env('DATABASE_PASSWORD', 'strapi'),
       },
       options: {
         useNullAsDefault: true,
