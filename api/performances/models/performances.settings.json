@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "performances",
+  "info": {
+    "name": "Performances",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "year": {
+      "type": "date",
+      "default": "2022-06-01T10:00:00.000Z",
+      "required": false
+    }
+  }
+}
